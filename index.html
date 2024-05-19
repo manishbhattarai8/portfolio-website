@@ -68,6 +68,32 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        #popup {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px;
+        }
+        #popup button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
@@ -107,5 +133,28 @@
         <p>&copy; 2024 Manish Bhattarai | Contact: manishforwebsite.com</p>
         </h5>
     </footer>
+    <div id="popup-overlay">
+        <div id="popup">
+            <h2>Welcome to My Portfolio!</h2>
+            <p>I'm excited to share my projects and experiences with you.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    <script>
+        // Function to show the popup - New Code
+        function showPopup() {
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+
+        // Function to close the popup - New Code
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // Show the popup when the page loads - New Code
+        window.onload = function() {
+            showPopup();
+        };
+    </script>
 </body>
 </html>
